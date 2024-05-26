@@ -7,7 +7,7 @@ export const initialState = {
   todos: [
     {
       id: Date.now(),
-      title:"",
+      title: "",
       isChecked: false,
     },
   ],
@@ -47,14 +47,30 @@ export const reducer = (state, action) => {
     case "EDIT_TODO":
       return {
         ...state,
-        todos:[
+        todos: [
           ...state.todos.map((item) =>
-            item.id === action.payload.id 
-          ? {...item,title:action.payload.title}
-          : item
-        )
-      ]
-      }
+            item.id === action.payload.id
+              ? { ...item, title: action.payload.title }
+              : item
+          ),
+        ],
+      };
+    case "ADD_REMINDERS":
+      return {
+        ...state,
+        todos: [
+          ...state.todos.map((item) =>
+            item.id === action.payload.reminderId
+              ? {
+                  ...item,
+                  date: action.payload.date,
+                  time: action.payload.time,
+                }
+              : item
+          ),
+        ],
+      };
+
     case "SET_TODOS":
       return {
         ...state,

@@ -1,7 +1,8 @@
 import { TodoContext, initialState, reducer } from "./State";
 import Todos from "./components/Todos";
 import { useEffect, useReducer } from "react"
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   const[state,dispatch] = useReducer(reducer,initialState)
   
@@ -20,6 +21,7 @@ const App = () => {
   return (
   <TodoContext.Provider value={{state,dispatch}}>
     <Todos/>
+    <ToastContainer />
   </TodoContext.Provider>
   );
 };
