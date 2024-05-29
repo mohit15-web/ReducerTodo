@@ -18,6 +18,19 @@ function Todos() {
   }, [state]);
 
   const addTodo = () => {
+    if(text === "") {
+      toast.error("Enter Todo", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
+      return;
+    }
     dispatch({ type: "ADD_TODOS", payload: text });
     setText("");
     toast.success("Todo Added Successfully", {

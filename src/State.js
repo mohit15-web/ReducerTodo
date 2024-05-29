@@ -5,11 +5,11 @@ export const TodoContext = createContext();
 
 export const initialState = {
   todos: [
-    {
-      id: Date.now(),
-      title: "",
-      isChecked: false,
-    },
+    // {
+    //   id: Date.now(),
+    //   title: "",
+    //   isChecked: false,
+    // },
   ],
 };
 
