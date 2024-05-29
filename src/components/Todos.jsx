@@ -149,7 +149,7 @@ function Todos() {
                 className={`
               flex py-2 px-3 cursor-pointer my-3 rounded-lg text-black font-semibold justify-between items-center bg-pink-100 w-60
               sm:w-[400px] lg:w-[500px] xl:w-[600px] 2xl:w-[500px]
-              ${todo.isChecked ? "bg-green-300" : ""}
+              ${todo.isChecked ? "bg-green-400" : ""}
               `}
               >
                 <div className="flex justify-center items-center gap-2">
